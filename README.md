@@ -33,7 +33,6 @@
 ![https://gyazo.com/570ba9c7966623e7e0c2ab984b81ef72.gif](https://gyazo.com/570ba9c7966623e7e0c2ab984b81ef72.gif)
 
 - Start playing with your new NFT Viking character
-![https://gyazo.com/0b9e8404740dc3a1f0c6b78080b817ca.gif](https://gyazo.com/0b9e8404740dc3a1f0c6b78080b817ca.gif)
 
 ## Features
 - 📦 [Hardhat](https://hardhat.org/) - Ethereum development environment for professionals

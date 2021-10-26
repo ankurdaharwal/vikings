@@ -23,6 +23,17 @@
 
 ## Screenshots
 
+- Connect to MetaMask to Begin
+![https://gyazo.com/459305cf9b9110c71b30876199897572.gif](https://gyazo.com/459305cf9b9110c71b30876199897572.gif)
+
+- Select your character to start play
+![https://gyazo.com/ba285dceb38e9701b375d37dcda259a6.gif](https://gyazo.com/ba285dceb38e9701b375d37dcda259a6.gif)
+
+- Mint an NFT that you can view on OpenSea or Rarible, etc.
+![https://gyazo.com/570ba9c7966623e7e0c2ab984b81ef72.gif](https://gyazo.com/570ba9c7966623e7e0c2ab984b81ef72.gif)
+
+- Start playing with your new NFT Viking character
+![https://gyazo.com/0b9e8404740dc3a1f0c6b78080b817ca.gif](https://gyazo.com/0b9e8404740dc3a1f0c6b78080b817ca.gif)
 
 ## Features
 - 📦 [Hardhat](https://hardhat.org/) - Ethereum development environment for professionals

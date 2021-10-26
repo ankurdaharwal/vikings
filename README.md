@@ -17,8 +17,8 @@
 
 ## Watch the collection on OpenSea.io or Rarible.com
 Example: 
-- ![https://testnets.opensea.io/collection/vikings-v2](https://testnets.opensea.io/collection/vikings-v2)
-- ![https://rinkeby.rarible.com/collection/0x681fa6190c83c6a0d48c3a60ea5914de3cfcb1d5](https://rinkeby.rarible.com/collection/0x681fa6190c83c6a0d48c3a60ea5914de3cfcb1d5)
+- [https://testnets.opensea.io/collection/vikings-v2](https://testnets.opensea.io/collection/vikings-v2)
+- [https://rinkeby.rarible.com/collection/0x681fa6190c83c6a0d48c3a60ea5914de3cfcb1d5](https://rinkeby.rarible.com/collection/0x681fa6190c83c6a0d48c3a60ea5914de3cfcb1d5)
 
 ## Production Build
 - `yarn build`

@@ -1,0 +1,223 @@
+.App {
+  height: 100%;
+  background-color: #0d1116;
+  background-image: url("./assets/valhalla_bg_blur.jpeg");
+  background-size: cover;
+  background-position: center;
+  overflow: scroll;
+  text-align: center;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 2rem;
+  font-family: "comic_runesregular";
+  letter-spacing: 36px;
+  font-size: 6rem;
+  font-weight: bold;
+  color: white;
+}
+
+.line {
+  align-items: center;
+  width: 95%;
+}
+
+.sound-box {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.sound-toggle {
+  max-width: 50px;
+  cursor: pointer;
+  font-size: 50px;
+  font-weight: bold;
+  animation: shm 0.2s infinite alternate;
+}
+
+.sub-text {
+  letter-spacing: 22px;
+  font-family: "comic_runesregular";
+  font-size: 1rem;
+  color: white;
+}
+
+.content-container {
+  background-color: #151515;
+}
+
+.cta-button {
+  height: 65px;
+  border: 0;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: "comic_runesregular";
+  letter-spacing: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.connect-wallet-container {
+  display: flex;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 2rem;
+  align-items: center;
+  animation: header 0.4s infinite alternate;
+}
+
+.connect-wallet-container img {
+  padding-bottom: 20px;
+}
+
+.connect-wallet-button {
+  margin-top: 6rem;
+  align-items: center;
+  transition: transform 0.2s;
+  background-image: linear-gradient(
+    to right,
+    #00ae8e 0%,
+    #00ac45 20%,
+    #d2a800 41%,
+    #00ce7f 61%,
+    #7eff5a 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-animation 3s ease infinite;
+}
+
+.connect-wallet-button:hover {
+  transform: scale(1.5);
+}
+
+.mint-button {
+  background: -webkit-linear-gradient(left, #a200d6, #ff6fdf);
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
+  margin-right: 15px;
+}
+
+.opensea-button {
+  background-color: rgb(32, 129, 226);
+}
+
+.mint-count {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(0, 12, 9);
+  color: rgba(187, 255, 229, 0.235);
+  justify-content: center;
+  padding: 0.8em;
+}
+
+.footer-text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Font */
+@font-face {
+  font-family: "comic_runesregular";
+  src: url("./assets/comicrunes-webfont.woff2") format("woff2"),
+    url("./assets/comicrunes-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.glow-text {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    rgb(255, 167, 52),
+    rgb(34, 255, 141),
+    #39ffd1
+  );
+  background-size: 30%;
+  animation: animate 10s infinite alternate;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(228, 203, 203, 0);
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+/* KeyFrames */
+@-webkit-keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shm {
+  from {
+    margin-left: 30px;
+    animation-timing-function: cubic-bezier(0.25, 0.01, 0.55, 0.16);
+  }
+  to {
+    margin-left: 38px;
+  }
+}
+
+@keyframes header {
+  from {
+    margin-top: 0px;
+    animation-timing-function: cubic-bezier(0.25, 0.01, 0.55, 0.16);
+  }
+  to {
+    margin-top: 10px;
+  }
+}

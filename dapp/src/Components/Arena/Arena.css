@@ -1,0 +1,325 @@
+.arena-title {
+  color: white;
+  margin: 0px;
+  background-color: rgb(0, 63, 42);
+  box-shadow: 0px 0px 5px rgb(255, 174, 52);
+  padding: 0.4em;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bolder;
+  letter-spacing: 0.2em;
+  font-family: "comic_runesregular";
+}
+
+.arena-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://gateway.pinata.cloud/ipfs/Qmf6qe42zfWyXfsQp94GifRZsrw61KFbdzJByp1i2JNW2F");
+  flex-direction: column;
+  margin: 2rem;
+  color: white;
+}
+
+.arena-container .boss-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4rem;
+}
+
+.character-name {
+  padding: 0.4rem;
+  background-image: linear-gradient(
+    to right,
+    #004538 10%,
+    #007472 30%,
+    #6c5600 60%,
+    #00594c 80%,
+    #00714b 100%
+  );
+  margin-bottom: -6px;
+  border-radius: 10px;
+  font-family: "comic_runesregular";
+  font-size: 1rem;
+  letter-spacing: 1rem;
+  background-size: 200% 200%;
+  animation: gradient-animation 3s ease infinite;
+}
+
+.boss-container .boss-content {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  animation: gradient-animation 8s ease infinite;
+}
+
+.boss-container .loading-indicator {
+  display: flex;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.boss-container .loading-indicator p {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.player .image-content {
+  position: relative;
+}
+
+.boss-content .image-content {
+  position: relative;
+}
+
+.boss-content .image-content img {
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: scale-down;
+}
+
+.image-content .health-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+}
+
+.health-bar progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 25px;
+}
+
+.health-bar progress[value]::-webkit-progress-bar {
+  background-color: #e7211d;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  overflow: hidden;
+}
+
+.health-bar progress[value]::-webkit-progress-value {
+  background-color: #00ba0f;
+}
+
+.health-bar p {
+  position: relative;
+  margin-top: -20px;
+  min-width: 15rem;
+  font-size: 1em;
+  letter-spacing: 0.2rem;
+  font-weight: bolder;
+  color: white;
+}
+
+.arena-container .players-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.players-container .player {
+  display: flex;
+  margin-left: 10rem;
+  flex-direction: column;
+  max-height: 80%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.player .image-content img {
+  width: 100px;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  animation: gradient-animation 3s ease infinite;
+}
+
+.players-container .active-players {
+  display: flex;
+  flex-direction: column;
+}
+
+.active-players .players-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  overflow: scroll;
+}
+
+.players-list .active-player-item {
+  display: flex;
+  align-items: center;
+  background-color: #b12a5b;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.active-player-item .player-image {
+  width: 56px;
+  height: 56px;
+  background-color: gray;
+  margin-right: 15px;
+  border-radius: 8px;
+}
+
+.active-player-item .player-content {
+  flex-direction: column;
+  text-align: left;
+}
+
+.players-container .attack-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem;
+}
+
+.attack-container button {
+  height: 200px;
+  width: 100%;
+  font-size: 18px;
+  box-shadow: 0px 0px 40px rgb(255, 234, 0);
+  border-color: rgb(159, 95, 0);
+  border-radius: 30px;
+  background-image: linear-gradient(135deg, #00553f 10%, #008526 100%);
+  background-size: 200% 200%;
+  transition: transform 0.3s;
+  animation: gradient-animation 1s ease infinite;
+}
+
+.attack-container button:hover {
+  box-shadow: 0px 0px 50px rgb(255, 0, 0);
+  background-image: linear-gradient(135deg, #680000 10%, #d08e00 100%);
+  transform: scale(1.05);
+}
+
+/* Effects */
+.boss-container .attacking {
+  animation: shake 1.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.boss-container .hit {
+  animation: hit-bounce 1s ease;
+}
+
+.stats {
+  margin-top: 1rem;
+  width: 100%;
+  font-family: "comic_runesregular";
+  font-size: 0.8rem;
+  color: rgb(182, 182, 182);
+  letter-spacing: 0.4rem;
+}
+
+.stats span {
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  color: white;
+  font-weight: bolder;
+  animation: attack 1s ease infinite;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes hit-bounce {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  10% {
+    transform: scale(1.2, 0.6);
+  }
+  30% {
+    transform: scale(0.8, 1.1) translateY(-10px);
+  }
+  50% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes player {
+  from {
+    margin-top: 0px;
+    animation-timing-function: cubic-bezier(0.25, 0.01, 0.55, 0.16);
+  }
+  to {
+    margin-top: 10px;
+  }
+}
+
+@keyframes attack {
+  from {
+    box-shadow: 0px 0px 150px rgb(255, 0, 0);
+    color: #ffae00;
+    animation-timing-function: cubic-bezier(0.25, 0.01, 0.55, 0.16);
+  }
+  to {
+    box-shadow: 0px 0px 150px rgb(255, 183, 0);
+    color: #ff0000;
+  }
+}
+
+/* Toast */
+#toast {
+  visibility: hidden;
+  max-width: 500px;
+  height: 90px;
+  margin: auto;
+  background-color: gray;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+#toast #desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  height: 90px;
+  overflow: hidden;
+  white-space: nowrap;
+}

@@ -21,6 +21,7 @@ const App = () => {
 // State
 const [currentAccount, setCurrentAccount] = useState(null);
 const [characterNFT, setCharacterNFT] = useState(null);
+const [metaMaskMsg, setMetaMaskMsg] = useState(false);
 const [isLoading, setIsLoading] = useState(false);
 const [isPlaying, setIsPlaying] = useState(true);
 
@@ -30,6 +31,8 @@ const [isPlaying, setIsPlaying] = useState(true);
       const { ethereum } = window;
 
       if (!ethereum) {
+        setIsLoading(false);
+        setMetaMaskMsg(true);
         console.log('Make sure you have MetaMask!');
         return;
       } else {
@@ -46,6 +49,22 @@ const [isPlaying, setIsPlaying] = useState(true);
         setIsLoading(false);
         console.log('No authorized account found');
       }
+
+      /**********************************************************/
+      /* Handle chain (network) and chainChanged (per EIP-1193) */
+      /**********************************************************/
+
+      const chainId = await ethereum.request({ method: 'eth_chainId' });
+      handleChainChanged(chainId);
+
+      ethereum.on('chainChanged', handleChainChanged);
+
+      function handleChainChanged(_chainId) {
+        if(_chainId != '0x4'){
+          alert('Please select Rinkeby (Ethereum Testnet) Network on MetaMask!');
+        }
+      }
+
     } catch (error) {
       console.log(error);
     }
@@ -59,7 +78,8 @@ const [isPlaying, setIsPlaying] = useState(true);
       const { ethereum } = window;
 
       if (!ethereum) {
-        alert('Get MetaMask!');
+        alert("Download Metamask Chrome Extension!");
+        window.open("https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn", "_blank");
         return;
       }
 
@@ -75,6 +95,7 @@ const [isPlaying, setIsPlaying] = useState(true);
        */
       console.log('Connected', accounts[0]);
       setCurrentAccount(accounts[0]);
+
     } catch (error) {
       console.log(error);
     }
@@ -97,7 +118,7 @@ const renderContent = () => {
           className="cta-button connect-wallet-button"
           onClick={connectWalletAction}
         >
-          Connect Wallet To Play
+          CONNECT WALLET TO PLAY
         </button>
       </div>
     );
@@ -135,7 +156,7 @@ useEffect(() => {
     );
 
     const userNFT = await gameContract.checkIfUserHasNFT();
-    if (userNFT.name) {
+    if (userNFT?.name) {
       console.log('User has character NFT');
       setCharacterNFT(transformCharacterData(userNFT));
       setIsLoading(false);
@@ -161,31 +182,33 @@ useEffect(() => {
 }, [currentAccount]);
 
   return (
-  <div className="App">
-    <div className="container">      
-      <div className="sound-box">
-        <div className="sound-toggle" 
-          onClick={() => setIsPlaying(!isPlaying ? true : false)}>
-            {isPlaying ? '🔊' : '🔇'}
+    <div className="App">
+      <div className="container">      
+        <div className="sound-box">
+          <div className="sound-toggle" 
+            onClick={() => setIsPlaying(!isPlaying ? true : false)}>
+              {isPlaying ? '🔊' : '🔇'}
+          </div>
         </div>
+        <div className="error">{metaMaskMsg ? 'You need MetaMask to play!' : ''}</div>
+        <div className="header glow-text gradient-text">Vikings
+          <p className="sub-text">Fight For Valhalla</p>
+        </div>
+        {/* 🪓⚔️🛡️🗡️🏹 */}
+        {renderContent()}
       </div>
-      <div className="header glow-text gradient-text">Vikings
-        <p className="sub-text">Fight For Valhalla</p>
+      <Sound
+        url={Valhalla}
+        playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
+        volume={20}
+        loop
+      />
+      <div className="footer-container">
+        <div className="footer-text"></div>
+        &copy; 2021 Vikings Created with 🔥 by <b>An1cu12</b>
       </div>
-      {/* 🪓⚔️🛡️🗡️🏹 */}
-      {renderContent()}
     </div>
-    <Sound
-      url={Valhalla}
-      playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
-      loop
-    />
-    <div className="footer-container">
-      <div className="footer-text"></div>
-      &copy; 2021 Vikings Created with 🔥 by <b>An1cu12</b>
-    </div>
-  </div>
-);
+  );
 };
 
 export default App;

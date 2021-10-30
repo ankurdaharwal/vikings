@@ -47,6 +47,7 @@
   "dependencies": {
     "@openzeppelin/contracts": "^4.3.2",
     "global": "^4.4.0",
-    "hardhat-shorthand": "^1.0.0"
+    "hardhat-shorthand": "^1.0.0",
+    "remixd": "^0.2.4"
   }
 }

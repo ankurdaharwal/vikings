@@ -62,7 +62,7 @@
   padding-right: 40px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 2rem;
   font-family: "comic_runesregular";
   letter-spacing: 10px;
   font-weight: bold;
@@ -85,14 +85,15 @@
 .connect-wallet-button {
   margin-top: 6rem;
   align-items: center;
+  box-shadow: 0px 0px 30px #632e00;
   transition: transform 0.2s;
   background-image: linear-gradient(
     to right,
-    #00ae8e 0%,
-    #00ac45 20%,
-    #d2a800 41%,
-    #00ce7f 61%,
-    #7eff5a 100%
+    #006c58 0%,
+    #007b31 20%,
+    #947700 41%,
+    #008854 61%,
+    #23a000 100%
   );
   background-size: 200% 200%;
   animation: gradient-animation 3s ease infinite;
@@ -100,6 +101,15 @@
 
 .connect-wallet-button:hover {
   transform: scale(1.5);
+}
+
+.error {
+  color: rgb(255, 0, 0);
+  font-size: 24px;
+  margin-bottom: 2rem;
+  letter-spacing: 0.8rem;
+  font-family: "comic_runesregular";
+  font-weight: bolder;
 }
 
 .mint-button {

@@ -60,7 +60,7 @@ const [isPlaying, setIsPlaying] = useState(true);
       ethereum.on('chainChanged', handleChainChanged);
 
       function handleChainChanged(_chainId) {
-        if(_chainId != '0x4'){
+        if(_chainId !== '0x4'){
           alert('Please select Rinkeby (Ethereum Testnet) Network on MetaMask!');
         }
       }

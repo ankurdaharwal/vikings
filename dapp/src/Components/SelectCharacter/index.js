@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import Sound from 'react-sound';
 import './SelectCharacter.css';
 import { ethers } from 'ethers';
 
 import LoadingIndicator from '../LoadingIndicator';
+
+import SelectSound from '../../assets/select_hover.wav';
+import MintSound from '../../assets/select_click.mp3';
 
 import { CONTRACT_ADDRESS, transformCharacterData } from '../../constants';
 import metaVikings from '../../utils/Vikings.json';
@@ -12,6 +16,7 @@ const SelectCharacter = ({ setCharacterNFT }) => {
   const [gameContract, setGameContract] = useState(null);
 
   const [mintingCharacter, setMintingCharacter] = useState(false);
+  const [isSelecting, setIsSelecting] = useState(false);
 
   // UseEffect
   useEffect(() => {
@@ -125,6 +130,8 @@ const SelectCharacter = ({ setCharacterNFT }) => {
       <div 
         className="character-item"
         key={character.name}
+        onMouseEnter={() => setIsSelecting(true)}
+        onMouseLeave={() => setIsSelecting(false)}
         onClick={mintCharacterNFTAction(index)}
       >
         <div className="name-container">
@@ -159,6 +166,16 @@ const SelectCharacter = ({ setCharacterNFT }) => {
             </div>
           )}
         </div>
+        <Sound
+          url={SelectSound}
+          playStatus={isSelecting ? Sound.status.PLAYING : Sound.status.STOPPED}
+          volume={100}
+        />
+        <Sound
+          url={MintSound}
+          playStatus={mintingCharacter ? Sound.status.PLAYING : Sound.status.STOPPED}
+          volume={100}
+        />
       </>
     );
 };

@@ -186,10 +186,8 @@
   height: 200px;
   width: 100%;
   font-size: 18px;
-  box-shadow: 0px 0px 40px rgb(255, 234, 0);
-  border-color: rgb(159, 95, 0);
   border-radius: 30px;
-  background-image: linear-gradient(135deg, #00553f 10%, #008526 100%);
+  background-image: linear-gradient(135deg, #004d38 10%, #00de89 100%);
   background-size: 200% 200%;
   transition: transform 0.3s;
   animation: gradient-animation 1s ease infinite;
@@ -197,7 +195,7 @@
 
 .attack-container button:hover {
   box-shadow: 0px 0px 50px rgb(255, 0, 0);
-  background-image: linear-gradient(135deg, #680000 10%, #d08e00 100%);
+  background-image: linear-gradient(135deg, #7d0000 10%, #ff8400 100%);
   transform: scale(1.05);
 }
 

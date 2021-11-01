@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import Sound from 'react-sound';
 import { ethers } from 'ethers';
 
-import LoadingIndicator from '../LoadingIndicator';
+import SelectSound from '../../assets/select_hover.wav';
+import AttackSound from '../../assets/dragon.wav';
 
 import { CONTRACT_ADDRESS, transformCharacterData } from '../../constants';
 import Vikings from '../../utils/Vikings.json';
@@ -19,19 +21,24 @@ const Arena = ({ characterNFT }) => {
   const [boss, setBoss] = useState(null);
 
   const [attackState, setAttackState] = useState('');
+  const [isSelecting, setIsSelecting] = useState(false);
+  const [isAttacking, setIsAttacking] = useState(false);
   
   const runAttackAction = async () => {
     try {
       if (gameContract) {
+          setIsAttacking(true);
           setAttackState('attacking');
           console.log('Attacking boss...');
           const attackTxn = await gameContract.attackBoss();
           await attackTxn.wait();
           console.log('attackTxn:', attackTxn);
           setAttackState('hit');
+          setIsAttacking(false);
       }
     } catch (error) {
         console.error('Error attacking boss:', error);
+        setIsAttacking(false);
         setAttackState('');
     }
   };
@@ -95,7 +102,11 @@ return (
           </div>
         </span>
         <span className="attack-container">
-          <button onClick={() => { runAttackAction()}}>
+          <button 
+            onMouseEnter={() => setIsSelecting(true)}
+            onMouseLeave={() => setIsSelecting(false)}
+            onClick={() => { runAttackAction()}}
+          >
             <img
               src={`https://gateway.pinata.cloud/ipfs/QmPERvbAWHKSVXdNxreYj1drSYr7b88N3Afy8ETQEQXz8S`}
               alt={`Axe`}
@@ -117,15 +128,22 @@ return (
             </div>
           </div>
           {attackState === 'attacking' && (
-            <div className="loading-indicator">
-                <LoadingIndicator />
-                <p>Attacking ⚔️</p>
-            </div>
+                <p className="stats">Attacking ⚔️</p>
           )}
           </span>
         </div>
       )}
     </div>
+    <Sound
+      url={SelectSound}
+      playStatus={isSelecting ? Sound.status.PLAYING : Sound.status.STOPPED}
+      volume={100}
+    />
+    <Sound
+      url={AttackSound}
+      playStatus={isAttacking ? Sound.status.PLAYING : Sound.status.STOPPED}
+      volume={100}
+    />
     </>
   );
 };

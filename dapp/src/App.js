@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import Sound from 'react-sound';
-import Valhalla from './assets/valhalla.mp3'
-import ValhallaMetal from './assets/valhalla_metal.mp3'
+import Valhalla from './assets/valhalla.mp3';
+import ValhallaMetal from './assets/valhalla_metal.mp3';
 
 import { ethers } from 'ethers';
 import './App.css';

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import Sound from 'react-sound';
 import Valhalla from './assets/valhalla.mp3'
+import ValhallaMetal from './assets/valhalla_metal.mp3'
 
 import { ethers } from 'ethers';
 import './App.css';
@@ -24,6 +25,7 @@ const [characterNFT, setCharacterNFT] = useState(null);
 const [metaMaskMsg, setMetaMaskMsg] = useState(false);
 const [isLoading, setIsLoading] = useState(false);
 const [isPlaying, setIsPlaying] = useState(true);
+const [isMetal, setIsMetal] = useState(true);
 
   // Actions
   const checkIfWalletIsConnected = async () => {
@@ -185,10 +187,17 @@ useEffect(() => {
     <div className="App">
       <div className="container">      
         <div className="sound-box">
-          <div className="sound-toggle" 
+          <span className="sound-toggle" 
             onClick={() => setIsPlaying(!isPlaying ? true : false)}>
-              {isPlaying ? '🔊' : '🔇'}
-          </div>
+              {isPlaying ? '🔊' : '🔇'} 
+          </span>
+          <span className="sound-toggle-no-animation" 
+            onClick={() => setIsMetal(!isMetal ? true : false)}>
+              {isMetal ? '🎸' : '🪕'}
+          </span>
+          <span className="sound-toggle-no-animation">
+            <a href={"https://github.com/ankurdaharwal/vikings"} target="_blank" rel="noreferrer">👨🏻‍💻</a>  
+          </span>
         </div>
         <div className="error">{metaMaskMsg ? 'You need MetaMask to play!' : ''}</div>
         <div className="header glow-text gradient-text">Vikings
@@ -198,7 +207,7 @@ useEffect(() => {
         {renderContent()}
       </div>
       <Sound
-        url={Valhalla}
+        url={isMetal ? ValhallaMetal: Valhalla}
         playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.STOPPED}
         volume={20}
         loop

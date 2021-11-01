@@ -36,11 +36,17 @@
 }
 
 .sound-toggle {
-  max-width: 50px;
   cursor: pointer;
-  font-size: 50px;
+  font-size: 30px;
   font-weight: bold;
   animation: shm 0.2s infinite alternate;
+}
+
+.sound-toggle-no-animation {
+  margin-left: 1rem;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .sub-text {

@@ -33,21 +33,21 @@ const main = async () => {
       "Demigod",
     ], // Class
     [
-      "https://gateway.pinata.cloud/ipfs/QmamB3UngboAGVbdh2Xye33wJFoKEc18M89miuGi7bEpLa",
-      "https://gateway.pinata.cloud/ipfs/QmWLdYJJXMcqDrgZ5oQkPU4u3dcbsPA95xHMU6uzXo3oai",
-      "https://gateway.pinata.cloud/ipfs/QmR47fS5Uvqu9WzhApFSt5ZAby4mYM4T4rv52hVCvQp2D3",
-      "https://gateway.pinata.cloud/ipfs/Qmd8SbaRpuybBuaWMvrg5RdcV3fj4pfTds2vSMnpswV17b",
-      "https://gateway.pinata.cloud/ipfs/QmQSCa7mH15hWm8svN3ARqPPBeGBuahU7tQHc5pLz498qu",
-      "https://gateway.pinata.cloud/ipfs/QmQLCY7eSoBbQVeJW4jxyeGMGHEYvwGLQdvSF8iaZM12qt",
-      "https://gateway.pinata.cloud/ipfs/QmdZVhtDYQ885mK7oeuXWCQbXoZaZWdMhQtC4jHRhYs1pB",
-      "https://gateway.pinata.cloud/ipfs/QmXmtiVtBQHaqJ7WrppLcccdhF2YuiQ3dZkRsRvMch1DU5",
-      "https://gateway.pinata.cloud/ipfs/QmahResLJpq5Rs6byKkVC1Cuf3pdrCaXmjApGH98v11w9b",
-      "https://gateway.pinata.cloud/ipfs/Qmcf6bJSFpDJ3qtPQpJMRtUDG82YXUEUdPEACgPEo4QtRP",
+      "https://ipfs.io/ipfs/QmamB3UngboAGVbdh2Xye33wJFoKEc18M89miuGi7bEpLa",
+      "https://ipfs.io/ipfs/QmWLdYJJXMcqDrgZ5oQkPU4u3dcbsPA95xHMU6uzXo3oai",
+      "https://ipfs.io/ipfs/QmR47fS5Uvqu9WzhApFSt5ZAby4mYM4T4rv52hVCvQp2D3",
+      "https://ipfs.io/ipfs/Qmd8SbaRpuybBuaWMvrg5RdcV3fj4pfTds2vSMnpswV17b",
+      "https://ipfs.io/ipfs/QmQSCa7mH15hWm8svN3ARqPPBeGBuahU7tQHc5pLz498qu",
+      "https://ipfs.io/ipfs/QmQLCY7eSoBbQVeJW4jxyeGMGHEYvwGLQdvSF8iaZM12qt",
+      "https://ipfs.io/ipfs/QmdZVhtDYQ885mK7oeuXWCQbXoZaZWdMhQtC4jHRhYs1pB",
+      "https://ipfs.io/ipfs/QmXmtiVtBQHaqJ7WrppLcccdhF2YuiQ3dZkRsRvMch1DU5",
+      "https://ipfs.io/ipfs/QmahResLJpq5Rs6byKkVC1Cuf3pdrCaXmjApGH98v11w9b",
+      "https://ipfs.io/ipfs/Qmcf6bJSFpDJ3qtPQpJMRtUDG82YXUEUdPEACgPEo4QtRP",
     ],
     [500, 300, 350, 450, 600, 450, 250, 400, 500, 650], // HP values
     [90, 150, 120, 100, 75, 95, 160, 110, 85, 70], // Attack damage values
     "Drakon", // Boss name
-    "https://gateway.pinata.cloud/ipfs/QmeyEFasFs6qcB9CuRiALKWj2PrYfnfT5t3VboYJymjia4", // Boss image
+    "https://ipfs.io/ipfs/QmeyEFasFs6qcB9CuRiALKWj2PrYfnfT5t3VboYJymjia4", // Boss image
     10000, // Boss hp
     150 // Boss attack damage
   );

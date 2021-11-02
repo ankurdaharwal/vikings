@@ -1,4 +1,4 @@
-const CONTRACT_ADDRESS = '0x681fA6190C83C6a0D48C3A60eA5914DE3CFCB1D5';
+const CONTRACT_ADDRESS = '0xa02A438C381305424db255E453986b0eff88f3b3';
 
 /*
  * Add this method and make sure to export it on the bottom!

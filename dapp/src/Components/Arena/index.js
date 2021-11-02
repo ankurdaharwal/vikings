@@ -108,7 +108,7 @@ return (
             onClick={() => { runAttackAction()}}
           >
             <img
-              src={`https://gateway.pinata.cloud/ipfs/QmPERvbAWHKSVXdNxreYj1drSYr7b88N3Afy8ETQEQXz8S`}
+              src={`https://ipfs.io/ipfs/QmPERvbAWHKSVXdNxreYj1drSYr7b88N3Afy8ETQEQXz8S`}
               alt={`Axe`}
               height={160}
               width={140}

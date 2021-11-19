@@ -200,6 +200,9 @@ useEffect(() => {
               {isMetal ? '🎸' : '🪕'}
           </span>
           <span className="sound-toggle-no-animation">
+            <a href={"https://testnets.opensea.io/collection/vikings-v4"} target="_blank" rel="noreferrer">⛵</a>  
+          </span>
+          <span className="sound-toggle-no-animation">
             <a href={"https://github.com/ankurdaharwal/vikings"} target="_blank" rel="noreferrer">👨🏻‍💻</a>  
           </span>
         </div>

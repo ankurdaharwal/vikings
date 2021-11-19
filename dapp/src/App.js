@@ -179,7 +179,7 @@ useEffect(() => {
   /*
    * We only want to run this, if we have a connected wallet
    */
-  if (currentAccount && checkIfWalletIsConnected() ) {
+  if (currentAccount ) {
     console.log('CurrentAccount:', currentAccount);
     fetchNFTMetadata();
     setIsLoading(false);

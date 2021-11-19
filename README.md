@@ -17,8 +17,8 @@
 
 ## Watch the collection on OpenSea.io or Rarible.com
 Example: 
-- [https://testnets.opensea.io/collection/vikings-v3](https://testnets.opensea.io/collection/vikings-v3)
-- [https://rinkeby.rarible.com/collection/0xa02A438C381305424db255E453986b0eff88f3b3](https://rinkeby.rarible.com/collection/0xa02A438C381305424db255E453986b0eff88f3b3)
+- [https://testnets.opensea.io/collection/vikings-v4](https://testnets.opensea.io/collection/vikings-v4)
+- [https://rinkeby.rarible.com/collection/0xc5ADafB624076060F5dB83a4261d7d9349AA2067](https://rinkeby.rarible.com/collection/0xa02A438C381305424db255E453986b0eff88f3b3)
 
 ## View the contract on the public explorer
 Example:[https://rinkeby.etherscan.io/address/0xa02A438C381305424db255E453986b0eff88f3b3](https://rinkeby.etherscan.io/address/0xa02A438C381305424db255E453986b0eff88f3b3)

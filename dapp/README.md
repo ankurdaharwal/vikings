@@ -7,7 +7,7 @@
 - `yarn`
 
 ## Environment File (.env)
-- PROVIDER_URL: Alchemy or any other Provider endpoint (Default: Rinkeby)
+- PROVIDER_URL: Alchemy or any other Provider endpoint (Default: Matic Testnet)
 - PRIVATE_KEY: Private key for the deployer account
 
 ## Production Build

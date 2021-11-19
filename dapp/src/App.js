@@ -62,8 +62,8 @@ const [isMetal, setIsMetal] = useState(true);
       ethereum.on('chainChanged', handleChainChanged);
 
       function handleChainChanged(_chainId) {
-        if(_chainId !== '0x4'){
-          alert('Please select Rinkeby (Ethereum Testnet) Network on MetaMask!');
+        if(_chainId !== '0x13881'){
+          alert('Please select Polygon (Mumbai Testnet) Network on MetaMask!');
         }
       }
 
@@ -147,35 +147,39 @@ useEffect(() => {
    * The function we will call that interacts with out smart contract
    */
   const fetchNFTMetadata = async () => {
-    console.log('Checking for Character NFT on address:', currentAccount);
+    try {
+      console.log('Checking for Character NFT on address:', currentAccount);
 
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    const gameContract = new ethers.Contract(
-      CONTRACT_ADDRESS,
-      metaVikings.abi,
-      signer
-    );
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const gameContract = new ethers.Contract(
+        CONTRACT_ADDRESS,
+        metaVikings.abi,
+        signer
+      );
 
-    const userNFT = await gameContract.checkIfUserHasNFT();
-    if (userNFT?.name) {
-      console.log('User has character NFT');
-      setCharacterNFT(transformCharacterData(userNFT));
-      setIsLoading(false);
-    };
+      const userNFT = await gameContract.checkIfUserHasNFT();
+      if (userNFT?.name) {
+        console.log('User has character NFT');
+        setCharacterNFT(transformCharacterData(userNFT));
+        setIsLoading(false);
+      };
 
-  if (characterNFT?.name) {
-    console.log('User has character NFT');
-    setCharacterNFT(transformCharacterData(characterNFT));
-  } else {
-    console.log('No character NFT found!');
-  }
+      if (characterNFT?.name) {
+        console.log('User has character NFT');
+        setCharacterNFT(transformCharacterData(characterNFT));
+      } else {
+        console.log('No character NFT found!');
+      }
+    } catch (error) {
+      console.log(error);
+    }
 };
 
   /*
    * We only want to run this, if we have a connected wallet
    */
-  if (currentAccount) {
+  if (currentAccount && checkIfWalletIsConnected() ) {
     console.log('CurrentAccount:', currentAccount);
     fetchNFTMetadata();
     setIsLoading(false);

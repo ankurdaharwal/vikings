@@ -4,7 +4,7 @@
   "description": "Vikings turn-based NFT Game",
   "main": "index.js",
   "scripts": {
-    "deploy": "npx hardhat run scripts/run.ts --network rinkeby",
+    "deploy": "npx hardhat run scripts/run.ts --network matictest",
     "build": "cd dapp && yarn build",
     "start": "cd dapp && yarn start",
     "test": "echo \"Error: no test specified\" && exit 1"
